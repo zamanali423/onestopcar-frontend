@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #E9CC2F;
+  --secondary: #B69E24;
+  --dark: #1A1A1A;
+  --white: #FFFFFF;
+  --light-gray: #F8FAFC;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+}
+
+/* Prevent horizontal overflow on all sections */
+section, .section, main, .main {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for grid items */
+.grid > * {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.primary-gradient {
+  background: linear-gradient(135deg, #E9CC2F 0%, #B69E24 100%);
+}
+
+.dark-gradient {
+  background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
+}
+
+.text-primary { color: #E9CC2F; }
+.bg-primary { background-color: #E9CC2F; }
+.bg-secondary { background-color: #B69E24; }
+.bg-dark { background-color: #1A1A1A; }
+.border-primary { border-color: #E9CC2F; }
+
+.hero-bg {
+  background: linear-gradient(135deg, #1A1A1A 0%, #2a2a2a 50%, #1A1A1A 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(233, 204, 47, 0.15);
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(233, 204, 47, 0.2);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #E9CC2F, #B69E24);
+  border-radius: 2px;
+}
+
+.nav-link {
+  position: relative;
+  color: #1A1A1A;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #E9CC2F;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link:hover {
+  color: #B69E24;
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.badge-new {
+  background: #E9CC2F;
+  color: #1A1A1A;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #E9CC2F, #B69E24);
+  color: #1A1A1A;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(233, 204, 47, 0.4);
+}
+
+.btn-dark {
+  background: #1A1A1A;
+  color: white;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 2px solid #E9CC2F;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-dark:hover {
+  background: #E9CC2F;
+  color: #1A1A1A;
+  transform: translateY(-2px);
+}
+
+.faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.star-rating {
+  color: #E9CC2F;
+}
+
+.brand-logo-box {
+  background: white;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.brand-logo-box:hover {
+  border-color: #E9CC2F;
+  box-shadow: 0 8px 20px rgba(233, 204, 47, 0.2);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #E9CC2F20, #E9CC2F40);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Add these styles to your existing globals.css */
+
+/* Admin Dashboard Styles */
+.dashboard-sidebar {
+  background-color: #1A1A1A;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  color: #9CA3AF;
+}
+
+.dashboard-sidebar a {
+  color: #9CA3AF;
+}
+
+.dashboard-sidebar a:hover {
+  color: #E9CC2F;
+}
+
+.dashboard-sidebar .active {
+  background-color: rgba(233, 204, 47, 0.1);
+  color: #E9CC2F;
+}
+
+.dashboard-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 1rem 1.5rem;
+}
+
+.stat-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: #E9CC2F;
+  box-shadow: 0 8px 24px rgba(233, 204, 47, 0.1);
+}
+
+.chart-container {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+/* Admin Mobile Responsive */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    width: 280px !important;
+    transform: translateX(-100%);
+  }
+
+  .dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dashboard-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.125rem;
+  }
+
+  .stat-card {
+    padding: 0.875rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .chart-container {
+    padding: 0.875rem;
+  }
+
+  .chart-container h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dashboard-sidebar {
+    width: 240px !important;
+  }
+
+  .dashboard-sidebar.collapsed {
+    width: 72px !important;
+  }
+}
